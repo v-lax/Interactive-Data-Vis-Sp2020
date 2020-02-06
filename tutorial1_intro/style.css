@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+  }
+
+tr {
+    border-bottom: solid 1px #d3d3d3;
+    line-height: 1.75;
+}
+
+.above500{
+    border: dashed red;
+}
+
+td {
+    text-align: right;
+    padding: 0 0.5em;
+    background-color: grey;
+  }
+  
+tbody>tr>:nth-child(5){ 
+    background-color: indianred;
+}
