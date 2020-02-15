@@ -12,7 +12,7 @@ const height = (window.innerHeight)*.5;
 //The margin object is used to add some space between the actual width of our browser and
 //our SVG element.  
 const innerpadding = .2;
-const margin = {top:20,bottom:40,right:50,left:40};
+const margin = {top:20,bottom:40,right:80,left:60};
 
 //Lets create some scales. Because we are creating a horizontal bar graph here our scales
 // will be flipped from the demo that was done in class. So we will have to use scale
@@ -23,7 +23,10 @@ const yscale = d3.scaleBand()
     .paddingInner(innerpadding);
 const xscale = d3.scaleLinear()
     .domain([0,d3.max(data,d => d.count)])
-    .range([margin.left,width-margin.right]);
+    .range([0,width-margin.right]);
+const colorscale=d3.scaleLinear()
+                   .domain([0,d3.max(data,d=>d.count)])
+                   .range(["White","Orange"])
 
 //Lets define both our xaxis and our yaxis  
 const xaxis= d3.axisTop(xscale).ticks(data.length);
@@ -42,10 +45,10 @@ const rect = svg
     .data(data)
     .join("rect")
     .attr("y", d=>yscale(d.activity)+5)
-    .attr("x", margin.left+40)
+    .attr("x", margin.left)
     .attr("height", yscale.bandwidth())
     .attr("width",d=>xscale(d.count))
-    .attr("fill", "orange");
+    .attr("fill", d=>colorscale(d.count));
 
 //Alright, so now we have our rectangles! Success. Lets give them some text 
 const text= svg
@@ -53,8 +56,9 @@ const text= svg
     .data(data)
     .join('text')
     .attr('class','bar-labels')
-    .attr("y", d => yscale(d.activity) + (yscale.bandwidth() / 2))
-    .attr("x", d=> xscale(d.count))//I would love to know what kind of tricks there are to add the labels so they fit right next to the border of the rect. 
+    .attr("y", d => yscale(d.activity)+ (yscale.bandwidth() *.67))
+    .attr("dy", ".35em")
+    .attr("x", d=> xscale(d.count)+30)//I would love to know what kind of tricks there are to add the labels so they fit right next to the border of the rect. 
     .text(d => d.count);
 
 //add our axis to our graph. 
@@ -67,7 +71,7 @@ svg
 svg
     .append("g")
     .attr("class", "axis")
-    .attr('transform',`translate(70,5)`)
+    .attr('transform',`translate(${margin.left},0)`)
     .call(yaxis)
 
 // There is a good chance that when I am adding in a rectangle element or axis, that they 
