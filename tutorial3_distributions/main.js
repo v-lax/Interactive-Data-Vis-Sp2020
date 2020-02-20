@@ -141,7 +141,7 @@ function draw() {
     //give the function three parameter, enter calls all of the enter selections from our enter key, exit will
     //call the elements in the exit key, and we can add code to say what we want to do specifically to these elements.
     //I understand thats its not the best explanation but all we are doing is calling on the enter, exit keys from the 
-    //object that data returns to us correct? 
+    //object that data returns to us correct?
     .join(
       enter => enter
                 .append("circle")
