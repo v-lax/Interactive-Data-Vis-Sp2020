@@ -1,0 +1,38 @@
+.axis{
+    font-size: 14px;
+    color: rgb(248, 252, 4);
+}
+
+body {
+    background-color: black;
+}
+
+h1{
+    color: yellow;
+}
+
+h2{
+    color: yellow;
+}
+
+.dot{
+    cursor: pointer;
+}
+
+.axis-label{
+    fill: yellow;
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 100px;					
+    height: 100px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: rgb(119, 119, 119);	
+    color: yellow;
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
