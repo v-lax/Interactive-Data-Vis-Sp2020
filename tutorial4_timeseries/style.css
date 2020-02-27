@@ -1,0 +1,51 @@
+.y-axis{
+    color:rgb(59,209,0);
+    font-size: 14px;
+}
+
+body{
+    background-color: black;
+}
+
+h1{
+    color:rgb(59, 209,0);
+}
+
+h2{
+    color: rgb(59, 209,0);
+}
+
+.x-axis{
+    color:rgb(59, 209,0);
+    font-size: 14px;
+}
+
+.axis-label{
+    font-size: 14px;
+    fill: rgb(59, 209,0);
+    text-anchor: middle;
+}
+
+.trend{
+    fill:rgb(59,209,0);
+    pointer-events: none;
+}
+
+.dot{
+    fill:rgb(59, 209,0);
+    opacity:.5;
+}
+
+.tooltip{
+    position: absolute;			
+    text-align: center;			
+    width: 75px;					
+    height: 25px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: white;	
+    color: black;
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;
+}
