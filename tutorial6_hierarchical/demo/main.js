@@ -22,6 +22,7 @@ let state = {
  * */
 d3.json("../../data/flare.json", d3.autotype).then(data => {
   state.data = data;
+  console.log(state.data)
   init();
 });
 
